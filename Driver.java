@@ -1,7 +1,8 @@
 /*
-	Programación Orientada a Objetos
+	ProgramaciÃ³n Orientada a Objetos
 	Driver
 	22-09-2016
+	Cualquier otro comentario
 */
 import java.util.Scanner;
 
@@ -31,12 +32,12 @@ public class Driver
 				double salarioBase = entrada.nextDouble();
 				System.out.println("Ingrese la cantidad de horas en que estuvo ausente:");
 				double[] ausencia = new double[24];
-				//Se entran las horas de ausencia para los 24 días laborables del mes
+				//Se entran las horas de ausencia para los 24 dÃ­as laborables del mes
 				for (int i = 1; i<=24; i++)
 				{
 					System.out.println("Dia "+i); 
-					double horas = entrada.nextDouble(); //Se inicializó el i en 1 por eso se le resta 1
-					if (horas <= 8 ) //No se puede faltar más de 8 horas
+					double horas = entrada.nextDouble(); //Se inicializÃ³ el i en 1 por eso se le resta 1
+					if (horas <= 8 ) //No se puede faltar mÃ¡s de 8 horas
 						ausencia[i-1] = horas;
 					else
 						i--;
@@ -51,11 +52,11 @@ public class Driver
 				
 				if (tipo  == 1)
 				{
-					System.out.println("Años de antiguedad en el CES");
+					System.out.println("AÃ±os de antiguedad en el CES");
 					int antiguedad = entrada.nextInt();
 					int grado = 0;
 					do{
-						System.out.println("Ingrese el grado científico base del trabajador \n 0: Ninguno, 1: Master, 2: Doctor");
+						System.out.println("Ingrese el grado cientÃ­fico base del trabajador \n 0: Ninguno, 1: Master, 2: Doctor");
 						grado = entrada.nextInt();
 					}while (grado<0 && grado >3);
 					String gradoCient = "";
@@ -69,7 +70,7 @@ public class Driver
 				}
 				if (tipo  == 2)
 				{
-					System.out.println("Cantidad de días feriados trabajados");
+					System.out.println("Cantidad de dÃ­as feriados trabajados");
 					int feriados = entrada.nextInt();
 					//Se crea el trabajador no docente
 					TrabajadorNoDocente trabNoDocente = new TrabajadorNoDocente(nombre,area,salarioBase,ausencia,feriados);
@@ -78,7 +79,7 @@ public class Driver
 				String rptaUpper = ""; //inicializando la variable
 				do{
 					entrada.nextLine();
-					System.out.println("¿Desea ingresar otro trabajador? (Si/No)");
+					System.out.println("Â¿Desea ingresar otro trabajador? (Si/No)");
 					String rpta = entrada.nextLine();
 					rptaUpper = rpta.toUpperCase();
 					if (rptaUpper.equals("SI")) 
@@ -90,7 +91,7 @@ public class Driver
 			}
 			catch (Exception e)
 			{
-				System.out.println("Debe ingresar un número");
+				System.out.println("Debe ingresar un nÃºmero");
 				entrada.nextLine();
 			}
 		}while (opcion);
