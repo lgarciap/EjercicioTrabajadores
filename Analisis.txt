@@ -1,0 +1,59 @@
+Clase trabajador
+	- Atributos:
+		.- private nombre: String (Contendrá el nombre y los dos apellidos del trabajador)
+		.- private area: String (Contendrá el área donde trabaja el empleado)
+		.- protected salarioBase: double
+		.- private horasAusenciaDia: double[] (horas de ausencia diaria. Una casilla del arreglo por día laborable)
+	- Métodos:
+		//Constructores
+		.- public Trabajador() //sin parámetros
+		.- public Trabajador(String nombre, String area, double salarioBase, double[] horasAusenciaDiaria) //Con parámetros
+		//Sets y Gets
+		.- public void setNombre(String nombre)
+		.- public String getNombre()
+		.- public void setArea(String area)
+		.- public String getArea()
+		.- public void setSalarioBase(double salarioBase)
+		.- public double getSalarioBase()
+		.- public void setHorasAusenciaDia(double[] horasDia)
+		.- public double[] getHorasAusenciaDia()
+		//Servicios
+		.- public double tarifaHoraria() //Calcula la tarifa horaria dependiendo del salario base
+		.- public double DescuentoPorAusencias() //Calcula el descuento por ausencias
+		.- public int totalAusencias()//Calcula el total de horas en las que se ausentó el trabajador en el mes
+		.- public double salario() //Calcula el salario de un trabajador restándole al salario básico el descuento por las ausencias
+		
+Clase TrabajadorDocente
+	- Atributos:
+		.- private antiguedad: int (Contendrá la cantidad de años que lleva el trabajador en el centro de educación superior)
+		.- private gradoCientifico: String (master o doctor)
+	- Métodos:
+		//Constructores
+		public TrabajadorDocente()
+		//Al constructor con parámetros le entran todos los parámetros también de la clase padre
+		public TrabajadorDocente(String nombre, String area, double salarioBase, double[] horasAusenciaDiaria, int antiguedad, String gradoCientifico)
+		//Sets y Gets
+		.- public void setAntiguedad(int antiguedad)
+		.- public int getAntiguedad()
+		.- public void setGradoCientifico(String grado)
+		.- public String getGradoCientifico()
+		//Servicios
+		.- public double plusAntiguedad() //calcula el aumento por antiguedad del trabajador docente
+		.- public double plusGradoCientifico() //Calcula el aumento por grado científico del trabajador docente
+		.- public double salario() //Calcula el salario total del trabajador docente
+
+Clase TrabajadorNoDocente
+	- Atributos:
+		.- private cantidadFeriados: int (Contendrá la cantidad de días feriados que el trabajador no docente ha trabajado)
+	- Métodos:
+		//Constructores
+		public TrabajadorNoDocente()
+		//Al constructor con parámetros le entran todos los parámetros también de la clase padre
+		public TrabajadorNoDocente(String nombre, String area, double salarioBase, double[] horasAusenciaDiaria, int cantFeriados)
+		//Sets y Gets
+		.- public void setCantidadFeriados(int cantFeriados)
+		.- public int getCantidadFeriados()
+		//Servicios
+		.- public double extraFeriados() //calcula el aumento cantidad de días feriados trabajados por el trabajador no docente
+		.- public double tarifaDiaria() //Calcula la tarifa diaria dependiendo del salario base
+		.- public double salario() //Calcula el salario total del trabajador no docente
